@@ -45,5 +45,8 @@ Route::get('bagi/{nilai1}/{nilai2}', function ($nilai1, $nilai2) {
 });
 
 Route::get('tabel', function () {
-    return view('table');
+    $barang = ['meja', 'pensil', 'bolpoin', 'lampu', 'kursi'];
+
+    // return view('table', ['data' => $data, 'barang' => $barang2]);
+    return view('table', compact('barang'));
 });
