@@ -57,3 +57,7 @@ Route::get('tabel', function () {
 // Route::get('showsiswa', [SiswaController::class, 'show']);
 
 Route::resource('siswa', SiswaController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -10,6 +10,7 @@
                 <th scope="col">NIS</th>
                 <th scope="col">Nama</th>
                 <th scope="col">Alamat</th>
+                <th scope="col">Nama Sekolah</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -20,7 +21,15 @@
                     <td>{{ $item->nis }}</td>
                     <td>{{ $item->nama }}</td>
                     <td>{{ $item->alamat }}</td>
-                    <td><a href="{{ route('siswa.edit', $item->id) }}" class="btn btn-warning">Update</a></td>
+                    <td>{{ $item->sekolah->nama_sekolah }}</td>
+                    <td>
+                        <a href="{{ route('siswa.edit', $item->id) }}" class="btn btn-warning">Update</a>
+                        <form action="{{ route('siswa.destroy', $item->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

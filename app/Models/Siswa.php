@@ -19,4 +19,7 @@ class Siswa extends Model
     //     'alamat'
     // ];
 
+    function Sekolah() {
+        return $this->belongsTo(Sekolah::class);
+    }
 }

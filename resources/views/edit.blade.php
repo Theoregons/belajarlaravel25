@@ -24,6 +24,14 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+    <div class="form-group">
+        <label>Sekolah</label>
+        <select class="form-control" name="sekolah_id">
+            @foreach ($sekolah as $item)
+                <option value="{{ $item->id }}" @selected($data->sekolah_id == $item->id)>{{ $item->nama_sekolah }}</option>
+            @endforeach
+        </select>
+      </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endsection
