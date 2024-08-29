@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,3 +51,9 @@ Route::get('tabel', function () {
     // return view('table', ['data' => $data, 'barang' => $barang2]);
     return view('table', compact('barang'));
 });
+
+// Route::get('siswa', [SiswaController::class, 'index']);
+// Route::get('tambahsiswa', [SiswaController::class, 'create']);
+// Route::get('showsiswa', [SiswaController::class, 'show']);
+
+Route::resource('siswa', SiswaController::class);
